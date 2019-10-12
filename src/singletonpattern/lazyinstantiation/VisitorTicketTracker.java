@@ -29,6 +29,10 @@ public class VisitorTicketTracker {
 
 	private static volatile VisitorTicketTracker instancee;
 
+	
+	// double‐checked locking
+	// a design pattern in which we first test if
+	// synchronization is needed before actually acquiring any locks
 	public static VisitorTicketTracker getInstanceee() {
 		if (instance == null) {
 			synchronized (VisitorTicketTracker.class) {
